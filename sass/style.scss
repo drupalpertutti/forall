@@ -1,0 +1,93 @@
+@import 'settings';
+
+* {
+	@include box-sizing('border-box');
+}
+
+a {
+	text-decoration: none;
+}
+
+img, video, iframe, object, embed {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+table {
+  width: 100%;
+}
+
+tr.even td,
+tr.odd td {
+  padding: 10px 5px;
+}
+
+tr.odd {
+  background-color: white;
+}
+
+// Creo alcune classi di servizio, chiamate "Helpers", utili per flottare o nascondere al volo gli elementi. Attenzione!!! usare con cautela, piuttosto rivedi il layout e usa la griglia semantica che trovi in layout.scss
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+.hide {
+	display: none;
+}
+
+.no-desk {
+	@include breakpoint($desk) {display: none;}
+}
+
+.no-mobile {
+	display: none;
+	@include breakpoint($desk) {display: block;}
+}
+
+///////////////////////////////////		   	
+// Implementiamo il menu mobile //
+/////////////////////////////////
+
+// Modifico il blocco del menu principale inserito nella regione Nav inmodo da renderlo orizzontale inmodalità desktop e verticale in modalità mobile
+		   	
+#main-menu {
+	ul {
+	margin:0px;
+	padding:0px;
+	display: none;
+	@include breakpoint($desk) {display: block;}
+		li {
+	display:block;
+	width:100%;
+	margin-right: 10px;
+	list-style-type: none;
+		@include breakpoint($desk) {display: inline;}
+   			}
+   		}
+   	}
+
+// Pulsante nascosto con risoluzioni desktop
+
+.mobile_menu_button {
+	display: block;
+		@include breakpoint($desk) {display: none;}
+}		   	
+
+.mobile_toggle {display: block !important;
+	@include breakpoint($desk) {display: none;}
+}
+
+// Allineo il logo con il nome del sito e lo slogan. Se si desidera lasciare in verticale, eliminare questo ID. Se si desidera il logo a destra cambiare in float:right
+ 
+#site_logo {
+	float:left;
+	margin-right: 10px;
+}

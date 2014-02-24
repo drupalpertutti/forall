@@ -1,0 +1,49 @@
+name = Forall
+description = Il tema italiano creato in Sass, Compass e Susy per Drupal. Per tutti.
+core = 7.x
+screenshot = images/4all-logo.gif
+
+
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/custom.css
+
+
+
+scripts[] = js/start.js
+;scripts[] = js/vendor/modernizr.js
+
+
+regions[header] = Header
+regions[nav] = Nav
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[highlighted]= Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer
+regions[copy] = Copy
+
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+
+settings[toggle_logo] = 1
+settings[toggle_name] = 1
+settings[toggle_slogan] = 1
+settings[toggle_node_user_picture] = 1
+settings[toggle_comment_user_picture] = 1
+settings[toggle_search] = 1
+settings[toggle_favicon] = 1
+settings[toggle_main_menu] = 0
+settings[toggle_secondary_menu] = 0
+

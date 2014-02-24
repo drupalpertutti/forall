@@ -1,0 +1,1 @@
+<?php if($content) echo '<div class="'.$classes.'">'.$content.'</div>'; ?>

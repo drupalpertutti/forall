@@ -1,0 +1,29 @@
+//Questo file permette all'utente di configurare le variabili necessarie alla crezione del layout e di altri fogli di stile. In questo modo abbiamo un unico file che andremo a richiamare negli altri file .scss facendo ereditare tutte le variabili inpostate di seguito:
+
+@import 'compass'; // Importo le librerie compass
+@import 'breakpoint'; // Importo il framework per gestire media-query
+@import 'singularitygs'; // Importo la griglia e setto le variabili
+
+// Librerie Compass abilitate per il supporto di IE6 e IE7
+
+$legacy-support-for-ie: true;
+
+// Settaggio della griglia Singularity
+
+$wrapper-content: 1024px;
+$desk: 1024px;
+
+$grids: 6;
+$grids: add-grid(12 at $desk);
+
+$gutters: 1/3;
+
+$mobile-first: true;
+$output: 'isolation';
+
+
+// Qui puoi aggiungere variabili e mixins personalizzati 
+
+
+
+

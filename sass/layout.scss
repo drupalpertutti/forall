@@ -1,0 +1,57 @@
+@import 'settings';
+
+// Creo la classe per rendere la griglia visibile applicabile dalle impostazioni del tema.
+
+.grid-on {
+		@include background-grid($color: blue);
+		@include breakpoint($desk) {
+			@include background-grid($color: blue);
+		}
+}
+
+// Creo il contenitore di sfondo
+
+.wrapper {
+	width: 100%;
+    clear:both;
+    @include clearfix;
+}
+
+#main {
+	@include clearfix; 
+}
+
+// Creo il contenitore dei contenuti, eredita come dimensione la variabile $container-width e come numero di colonne la variabile $total-columns e varia numero di colonne da 6 a 12 in versione desktop
+
+.wrapper-content {
+	margin: 0 auto;
+	@include clearfix;
+	@include breakpoint($desk){
+		max-width: $wrapper-content;
+	}
+}
+
+// Specifico la dimensione di alcuni elementi che compongono il mio layout e che trovero su page.tpl.php (gli altri sono pilotati da variabili contenute in template.php)
+
+
+@include breakpoint($desk) { 
+
+	.two-sidebars {
+		#content { @include grid-span(6, 4); }
+	    #sidebar_first { @include grid-span(3, 1); }
+	    #sidebar_second { @include grid-span(3, 10); }
+	}
+	
+	.one-sidebar-first {
+	    #content { @include grid-span(9, 4); }
+	    #sidebar_first { @include grid-span(3, 1); }
+	}
+							
+	.one-sidebar-second {
+	    #content { @include grid-span(9, 1); }
+	    #sidebar_second { @include grid-span(3, 10); }
+	}
+	  
+	.no-sidebars { @include grid-span(12, 1); }
+
+}
